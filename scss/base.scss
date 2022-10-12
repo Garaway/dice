@@ -1,0 +1,110 @@
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-image: linear-gradient(to left top, rgb(117, 54, 130) 0%, rgb(159, 35, 39) 100%);
+    color: rgb(51, 51, 51);
+    height: 100vh;
+  }
+
+
+  .main {
+    position: relative;
+    top: 10%;
+    overflow: hidden;
+    margin: 0 auto;
+    font-family: "Helvetica Neue";
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 9px;
+    background-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(200px);
+    filter: blur();
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3rem 5rem;
+
+    &__player {
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      padding: 80px;
+    }
+
+    &__name {
+      font-size: 40px;
+      font-weight: 300;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    &__score {
+      font-size: 64px;
+      color: #b40606;
+      font-weight: 300;
+      margin-bottom: 120px;
+    }
+
+    &__current {
+      width: 100%;
+      max-width: 190px;
+      height: 88px;
+      background-color: #c73658;
+      margin: 0 auto;
+      color: aliceblue;
+      border-radius: 9px;
+      padding: 20px;
+      font-weight: 400;
+    }
+
+    &__current--label {
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    &__current--score {
+      font-size: 34px;
+      font-weight: 400;
+    }
+  }
+
+  .player--active {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .btn {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 40%);
+    border: none;
+    padding: 0.7rem 2.5rem;
+    border-radius: 50rem;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.2s;
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1.75rem 3.5rem rgb(0 0 0 / 10%);
+    cursor: pointer;
+  }
+
+  .btn:active {
+    transform: translate(-50%, 45%);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  }
+
+  .btn__new-game {
+    top: 30px;
+  }
+
+  .btn__roll-dice {
+    top: 60%;
+  }
+
+  .btn__hold {
+    top: 72%;
+  }
