@@ -12,19 +12,32 @@
     let btnNewGame = document.querySelector('.btn__new-game');
     let dice = document.querySelector('.dice');
 
-    player0.classList.add('player--active');
-    player1.classList.remove('player--active');
-    dice.classList.add('hidden');
-
-    current0El.textContent = 0;
-    current1El.textContent = 0;
-    score0El.textContent = 0;
-    score1El.textContent = 0;
 
     let activePlayer = 0;
     let scoreCurrent = 0;
     let scores = [0, 0];
     let playing = true;
+
+    const zeroing = function () {
+        player0.classList.add('player--active');
+        player1.classList.remove('player--active');
+        dice.classList.add('hidden');
+
+        current0El.textContent = 0;
+        current1El.textContent = 0;
+        score0El.textContent = 0;
+        score1El.textContent = 0;
+
+        playing = true;
+        scoreCurrent = 0;
+        activePlayer = 0;
+        scores = [0, 0];
+
+        player0.classList.remove('player--winner');
+        player1.classList.remove('player--winner');
+    }
+
+    zeroing();
 
     const switchPlayer = function () {
         document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -67,15 +80,8 @@
         }
     })
 
-    btnNewGame.addEventListener('click', function () {
-        current0El.textContent = 0;
-        current1El.textContent = 0;
-        score0El.textContent = 0;
-        score1El.textContent = 0;
-        player0.classList.add('player--active');
-        player1.classList.remove('player--active');
-        document.querySelector(`.player--${activePlayer}`).classList.remove('player--winner');
-    })
+
+    btnNewGame.addEventListener('click', zeroing);
 
 
 
